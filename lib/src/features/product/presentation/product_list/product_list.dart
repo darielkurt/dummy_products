@@ -15,7 +15,7 @@ class ProductList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return RiverPagedBuilder<int, Product>(
       limit: 10,
-      firstPageKey: 0,
+      firstPageKey: 9,
       provider: productListControllerProvider,
       itemBuilder: (context, product, index) {
         return ProductItem(
@@ -29,6 +29,14 @@ class ProductList extends ConsumerWidget {
       },
       pagedBuilder: (controller, builder) =>
           PagedListView(pagingController: controller, builderDelegate: builder),
+      noMoreItemsIndicatorBuilder: (context, pagingController) {
+        final titleMedium = Theme.of(context).textTheme.titleMedium;
+        return Center(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 64.0),
+          child: Text('More products for you soon!', style: titleMedium),
+        ));
+      },
     );
   }
 }

@@ -57,4 +57,28 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
+  Product(
+    id: 9,
+    title: 'iPhone X',
+    price: 899,
+    thumbnail: 'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+    stock: 34,
+    discountPercentage: 17.94,
+  ),
+  Product(
+    id: 10,
+    title: 'iPhone X',
+    price: 899,
+    thumbnail: 'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+    stock: 34,
+    discountPercentage: 17.94,
+  ),
+  Product(
+    id: 11,
+    title: 'iPhone X',
+    price: 899,
+    thumbnail: 'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+    stock: 34,
+    discountPercentage: 17.94,
+  ),
 ];
