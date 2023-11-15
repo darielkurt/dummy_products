@@ -10,7 +10,7 @@ class ProductListNotifier extends PagedNotifier<int, Product> {
   ProductListNotifier(this.productRepository)
       : super(
           load: (page, limit) async {
-            return productRepository.getProductsList(page, limit);
+            return productRepository.getProductsList(page: page, limit: limit);
           },
           nextPageKeyBuilder: NextPageKeyBuilderDefault.mysqlPagination,
         );

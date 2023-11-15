@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:dummy_products/src/constants/test_products.dart';
 import 'package:dummy_products/src/features/product/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -5,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class FakeProductsRepository {
   final List<Product> _products = kTestProducts;
 
-  List<Product> getProductsList() {
+  List<Product> _getProductsList() {
     return _products;
   }
 
@@ -13,25 +14,15 @@ class FakeProductsRepository {
     return _getProductById(_products, id);
   }
 
-  Future<List<Product>> fetchProductsList() async {
+  Future<List<Product>> getProductsList() async {
     return Future.value(_products);
   }
 
   static Product? _getProductById(List<Product> products, int id) {
-    try {
-      return products.firstWhere((product) => product.id == id);
-    } catch (e) {
-      return null;
-    }
+    return products.firstWhereOrNull((product) => product.id == id);
   }
 }
 
 final productsRepositoryProvider = Provider<FakeProductsRepository>((ref) {
   return FakeProductsRepository();
-});
-
-final productsListFutureProvider =
-    FutureProvider.autoDispose<List<Product>>((ref) {
-  final productsRepository = ref.watch(productsRepositoryProvider);
-  return productsRepository.fetchProductsList();
 });

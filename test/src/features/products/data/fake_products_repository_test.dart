@@ -21,5 +21,13 @@ void main() {
         kTestProducts[0],
       );
     });
+
+    test('getProduct(101) returns null', () {
+      final productsRepository = makeProductsRepository();
+      expect(
+        productsRepository.getProductById(101),
+        null,
+      );
+    });
   });
 }

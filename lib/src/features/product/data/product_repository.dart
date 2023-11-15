@@ -20,7 +20,8 @@ class ProductsRepository {
     throw UnimplementedError();
   }
 
-  Future<List<Product>> getProductsList(int page, int limit) async {
+  Future<List<Product>> getProductsList(
+      {required int page, required int limit}) async {
     final skip = page * 10;
     final result = await dio.get(
         '$kProductUrl?limit=$limit&skip=$skip&select=title,price,thumbnail,stock,discountPercentage');
