@@ -12,6 +12,7 @@ class ProductListScreen extends StatelessWidget {
           'Product Catalog',
           style: TextStyle(color: Colors.black),
         ),
+        centerTitle: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),

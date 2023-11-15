@@ -15,7 +15,7 @@ class ProductList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return RiverPagedBuilder<int, Product>(
       limit: 10,
-      firstPageKey: 9,
+      firstPageKey: 0,
       provider: productListControllerProvider,
       itemBuilder: (context, product, index) {
         return ProductItem(
@@ -27,13 +27,15 @@ class ProductList extends ConsumerWidget {
           discountPercentage: product.discountPercentage,
         );
       },
-      pagedBuilder: (controller, builder) =>
-          PagedListView(pagingController: controller, builderDelegate: builder),
+      pagedBuilder: (controller, builder) => PagedListView(
+          pagingController: controller,
+          builderDelegate: builder,
+          padding: EdgeInsets.symmetric(vertical: 12.0)),
       noMoreItemsIndicatorBuilder: (context, pagingController) {
         final titleMedium = Theme.of(context).textTheme.titleMedium;
         return Center(
             child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 64.0),
+          padding: const EdgeInsets.symmetric(vertical: 32.0),
           child: Text('More products for you soon!', style: titleMedium),
         ));
       },

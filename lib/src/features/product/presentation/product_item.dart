@@ -21,6 +21,7 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      minVerticalPadding: 12,
       onTap: () {
         if (id == null) return;
         Navigator.of(context).push(
