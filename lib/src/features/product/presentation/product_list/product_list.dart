@@ -30,7 +30,7 @@ class ProductList extends ConsumerWidget {
       pagedBuilder: (controller, builder) => PagedListView(
           pagingController: controller,
           builderDelegate: builder,
-          padding: EdgeInsets.symmetric(vertical: 12.0)),
+          padding: const EdgeInsets.symmetric(vertical: 12.0)),
       noMoreItemsIndicatorBuilder: (context, pagingController) {
         final titleMedium = Theme.of(context).textTheme.titleMedium;
         return Center(

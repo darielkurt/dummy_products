@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:dummy_products/src/features/product/data/product_repository.dart';
 import 'package:dummy_products/src/features/product/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

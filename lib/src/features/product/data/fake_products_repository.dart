@@ -6,10 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class FakeProductsRepository {
   final List<Product> _products = kTestProducts;
 
-  List<Product> _getProductsList() {
-    return _products;
-  }
-
   Product? getProductById(int id) {
     return _getProductById(_products, id);
   }

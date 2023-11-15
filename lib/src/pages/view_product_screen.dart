@@ -1,3 +1,5 @@
+import 'package:dummy_products/src/common_widgets/error_screen.dart';
+import 'package:dummy_products/src/common_widgets/loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dummy_products/src/features/product/data/product_repository.dart';
@@ -89,8 +91,10 @@ class ViewProductScreen extends ConsumerWidget {
           ),
         );
       },
-      error: (_, __) => const SizedBox.shrink(),
-      loading: () => const Divider(),
+      error: (_, __) => ErrorScreen(
+        onRetry: () => ref.invalidate(productFutureProvider(id)),
+      ),
+      loading: () => const LoadingScreen(),
     );
   }
 }

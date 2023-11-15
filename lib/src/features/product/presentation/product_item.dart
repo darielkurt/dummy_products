@@ -1,5 +1,7 @@
 import 'package:dummy_products/src/pages/view_product_screen.dart';
+import 'package:dummy_products/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductItem extends StatelessWidget {
   final int? id;
@@ -24,13 +26,9 @@ class ProductItem extends StatelessWidget {
       minVerticalPadding: 12,
       onTap: () {
         if (id == null) return;
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) {
-              return ViewProductScreen(id: id!);
-            },
-          ),
-        );
+
+        context.pushNamed(AppRoute.product.name,
+            pathParameters: {'id': id.toString()});
       },
       trailing: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
