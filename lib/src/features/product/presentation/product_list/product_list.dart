@@ -1,6 +1,6 @@
-import 'package:dummy_products/features/product/domain/product.dart';
-import 'package:dummy_products/features/product/presentation/product_item.dart';
-import 'package:dummy_products/features/product/presentation/product_list/product_list_controller.dart';
+import 'package:dummy_products/src/features/product/domain/product.dart';
+import 'package:dummy_products/src/features/product/presentation/product_item.dart';
+import 'package:dummy_products/src/features/product/presentation/product_list/product_list_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';

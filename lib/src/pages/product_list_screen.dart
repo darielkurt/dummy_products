@@ -1,4 +1,4 @@
-import 'package:dummy_products/features/product/presentation/product_list/product_list.dart';
+import 'package:dummy_products/src/features/product/presentation/product_list/product_list.dart';
 import 'package:flutter/material.dart';
 
 class ProductListScreen extends StatelessWidget {

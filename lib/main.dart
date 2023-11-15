@@ -1,4 +1,4 @@
-import 'package:dummy_products/screens/product_list_screen.dart';
+import 'package:dummy_products/src/pages/product_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

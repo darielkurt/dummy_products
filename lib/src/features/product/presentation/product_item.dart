@@ -1,4 +1,4 @@
-import 'package:dummy_products/screens/view_product_screen.dart';
+import 'package:dummy_products/src/pages/view_product_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
