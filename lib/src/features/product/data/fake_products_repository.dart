@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:dummy_products/src/constants/test_products.dart';
+import 'package:dummy_products/src/core/constants/test_products.dart';
 import 'package:dummy_products/src/features/product/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

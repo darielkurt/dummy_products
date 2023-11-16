@@ -1,5 +1,5 @@
-import 'package:dummy_products/src/pages/product_list_screen.dart';
-import 'package:dummy_products/src/pages/view_product_screen.dart';
+import 'package:dummy_products/src/features/product/presentation/product_list/product_list_screen.dart';
+import 'package:dummy_products/src/features/product/presentation/view_product/view_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

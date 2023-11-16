@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:dummy_products/src/client/dio_provider.dart';
+import 'package:dummy_products/src/core/client/dio_provider.dart';
 import 'package:dummy_products/src/features/product/data/constants.dart';
 import 'package:dummy_products/src/features/product/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
