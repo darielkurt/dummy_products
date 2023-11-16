@@ -3,7 +3,7 @@ import 'package:dummy_products/src/features/product/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_infinite_scroll/riverpod_infinite_scroll.dart';
 
-class ProductListNotifier extends PagedNotifier<int, Product> {
+class ProductListNotifier extends PagedNotifier<int, ProductModel> {
   final ProductsRepository productRepository;
 
   ProductListNotifier(this.productRepository)
@@ -16,7 +16,7 @@ class ProductListNotifier extends PagedNotifier<int, Product> {
 }
 
 final productListControllerProvider =
-    StateNotifierProvider<ProductListNotifier, PagedState<int, Product>>((ref) {
+    StateNotifierProvider<ProductListNotifier, PagedState<int, ProductModel>>((ref) {
   final productRepository = ref.watch(productRepositoryProvider);
   return ProductListNotifier(productRepository);
 });

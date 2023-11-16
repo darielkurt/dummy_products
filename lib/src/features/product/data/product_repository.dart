@@ -8,11 +8,11 @@ class ProductsRepository {
   ProductsRepository(this.dio);
   final Dio dio;
 
-  Future<Product> getProductById(int id) async {
+  Future<ProductModel> getProductById(int id) async {
     final result = await dio.get('$kProductUrl/$id');
 
     if (result.data != null) {
-      final product = Product.fromMap(result.data);
+      final product = ProductModel.fromMap(result.data);
       return product;
     }
 
@@ -20,7 +20,7 @@ class ProductsRepository {
     throw UnimplementedError();
   }
 
-  Future<List<Product>> getProductsList(
+  Future<List<ProductModel>> getProductsList(
       {required int page, required int limit}) async {
     final skip = page * 10;
     final result = await dio.get(
@@ -28,8 +28,8 @@ class ProductsRepository {
 
     if (result.data != null) {
       final List productJsonList = result.data['products'] ?? [];
-      final List<Product> productList =
-          productJsonList.map((e) => Product.fromMap(e)).toList();
+      final List<ProductModel> productList =
+          productJsonList.map((e) => ProductModel.fromMap(e)).toList();
       return productList;
     }
 
@@ -43,7 +43,7 @@ final productRepositoryProvider = Provider<ProductsRepository>((ref) {
 });
 
 final productFutureProvider =
-    FutureProvider.autoDispose.family<Product, int>((ref, id) async {
+    FutureProvider.autoDispose.family<ProductModel, int>((ref, id) async {
   final productRepository = ref.watch(productRepositoryProvider);
   return productRepository.getProductById(id);
 });

@@ -1,5 +1,5 @@
-class Product {
-  Product({
+class ProductEntity {
+  ProductEntity({
     this.id,
     this.title,
     this.description,
@@ -22,8 +22,23 @@ class Product {
   final String? category;
   final String? thumbnail;
   final List? images;
+}
 
-  Product copyWith({
+class ProductModel extends ProductEntity {
+  ProductModel({
+    super.id,
+    super.title,
+    super.description,
+    super.price,
+    super.discountPercentage,
+    super.rating,
+    super.stock,
+    super.thumbnail,
+    super.category,
+    super.images,
+  });
+
+  ProductModel copyWith({
     int? id,
     String? title,
     String? description,
@@ -35,7 +50,7 @@ class Product {
     String? thumbnail,
     List? images,
   }) {
-    return Product(
+    return ProductModel(
       id: id ?? this.id,
       title: title ?? this.title,
       description: description ?? this.description,
@@ -64,8 +79,8 @@ class Product {
     };
   }
 
-  factory Product.fromMap(Map<String, dynamic> map) {
-    return Product(
+  factory ProductModel.fromMap(Map<String, dynamic> map) {
+    return ProductModel(
       id: map['id'],
       title: map['title'],
       description: map['description'],

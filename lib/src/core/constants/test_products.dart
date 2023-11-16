@@ -1,7 +1,7 @@
 import 'package:dummy_products/src/features/product/domain/product.dart';
 
-final List<Product> kTestProducts = [
-  Product(
+final List<ProductModel> kTestProducts = [
+  ProductModel(
     id: 2,
     title: 'iPhone X',
     price: 899,
@@ -9,7 +9,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 3,
     title: 'iPhone X',
     price: 899,
@@ -17,7 +17,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 4,
     title: 'iPhone X',
     price: 899,
@@ -25,7 +25,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 5,
     title: 'iPhone X',
     price: 899,
@@ -33,7 +33,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 6,
     title: 'iPhone X',
     price: 899,
@@ -41,7 +41,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 7,
     title: 'iPhone X',
     price: 899,
@@ -49,7 +49,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 8,
     title: 'iPhone X',
     price: 899,
@@ -57,7 +57,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 9,
     title: 'iPhone X',
     price: 899,
@@ -65,7 +65,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 10,
     title: 'iPhone X',
     price: 899,
@@ -73,7 +73,7 @@ final List<Product> kTestProducts = [
     stock: 34,
     discountPercentage: 17.94,
   ),
-  Product(
+  ProductModel(
     id: 11,
     title: 'iPhone X',
     price: 899,

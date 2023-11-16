@@ -4,17 +4,17 @@ import 'package:dummy_products/src/features/product/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FakeProductsRepository {
-  final List<Product> _products = kTestProducts;
+  final List<ProductModel> _products = kTestProducts;
 
-  Product? getProductById(int id) {
+  ProductModel? getProductById(int id) {
     return _getProductById(_products, id);
   }
 
-  Future<List<Product>> getProductsList() async {
+  Future<List<ProductModel>> getProductsList() async {
     return Future.value(_products);
   }
 
-  static Product? _getProductById(List<Product> products, int id) {
+  static ProductModel? _getProductById(List<ProductModel> products, int id) {
     return products.firstWhereOrNull((product) => product.id == id);
   }
 }

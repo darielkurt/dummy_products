@@ -13,7 +13,7 @@ class ProductList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return RiverPagedBuilder<int, Product>(
+    return RiverPagedBuilder<int, ProductModel>(
       limit: 10,
       firstPageKey: 0,
       provider: productListControllerProvider,
