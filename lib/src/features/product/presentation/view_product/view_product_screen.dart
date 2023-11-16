@@ -51,10 +51,6 @@ class ViewProductScreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 16),
-                TitleSection(title: title),
-                const SizedBox(height: 8),
-                DescriptionSection(description: description),
-                const SizedBox(height: 16),
                 Center(
                   child: Container(
                     width: 200,
@@ -68,6 +64,15 @@ class ViewProductScreen extends ConsumerWidget {
                     ),
                   ),
                 ),
+                const Divider(),
+                ImagesSection(
+                  imageUrls: imageUrls ?? [],
+                ),
+                const Divider(),
+                const SizedBox(height: 16),
+                TitleSection(title: title, discountPercentage: discountPercentage),
+                const SizedBox(height: 8),
+                DescriptionSection(description: description),
                 const SizedBox(height: 16),
                 PriceSection(
                   price: price,
@@ -78,12 +83,6 @@ class ViewProductScreen extends ConsumerWidget {
                   rating: rating,
                   stock: stock,
                 ),
-                const SizedBox(height: 16),
-                const Divider(),
-                ImagesSection(
-                  imageUrls: imageUrls ?? [],
-                ),
-                const Divider(),
                 const SizedBox(height: 16),
                 CategorySection(category: category),
               ],
