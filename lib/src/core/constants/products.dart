@@ -1,5 +1,7 @@
 import 'package:dummy_products/src/features/product/domain/product.dart';
 
+const kProductUrl = 'https://dummyjson.com/products';
+
 final List<ProductModel> kTestProducts = [
   ProductModel(
     id: 2,

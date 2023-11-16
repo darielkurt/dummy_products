@@ -1,4 +1,4 @@
-import 'package:dummy_products/src/core/constants/test_products.dart';
+import 'package:dummy_products/src/core/constants/products.dart';
 import 'package:dummy_products/src/features/product/data/fake_products_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 

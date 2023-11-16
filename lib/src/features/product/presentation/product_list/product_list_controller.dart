@@ -1,4 +1,5 @@
 import 'package:dummy_products/src/features/product/data/product_repository.dart';
+import 'package:dummy_products/src/features/product/data/providers.dart';
 import 'package:dummy_products/src/features/product/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_infinite_scroll/riverpod_infinite_scroll.dart';

@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:dummy_products/src/core/client/dio_provider.dart';
-import 'package:dummy_products/src/features/product/data/constants.dart';
+import 'package:dummy_products/src/core/constants/products.dart';
 import 'package:dummy_products/src/features/product/domain/product.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ProductsRepository {
-  ProductsRepository(this.dio);
+class ProductsRepositoryImpl extends ProductsRepository {
+  ProductsRepositoryImpl(this.dio);
   final Dio dio;
 
+  @override
   Future<ProductModel> getProductById(int id) async {
     final result = await dio.get('$kProductUrl/$id');
 
@@ -20,6 +19,7 @@ class ProductsRepository {
     throw UnimplementedError();
   }
 
+  @override
   Future<List<ProductModel>> getProductsList(
       {required int page, required int limit}) async {
     final skip = page * 10;
@@ -33,17 +33,13 @@ class ProductsRepository {
       return productList;
     }
 
+    // TODO error handling
     throw UnimplementedError();
   }
 }
 
-final productRepositoryProvider = Provider<ProductsRepository>((ref) {
-  final dio = ref.watch(dioProvider);
-  return ProductsRepository(dio);
-});
-
-final productFutureProvider =
-    FutureProvider.autoDispose.family<ProductModel, int>((ref, id) async {
-  final productRepository = ref.watch(productRepositoryProvider);
-  return productRepository.getProductById(id);
-});
+abstract class ProductsRepository {
+  Future<ProductModel> getProductById(int id);
+  Future<List<ProductModel>> getProductsList(
+      {required int page, required int limit});
+}

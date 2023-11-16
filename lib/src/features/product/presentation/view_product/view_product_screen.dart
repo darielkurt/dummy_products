@@ -1,8 +1,8 @@
 import 'package:dummy_products/src/core/widgets/error_screen.dart';
 import 'package:dummy_products/src/core/widgets/loading_screen.dart';
+import 'package:dummy_products/src/features/product/data/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:dummy_products/src/features/product/data/product_repository.dart';
 import 'package:dummy_products/src/features/product/presentation/view_product/category_section.dart';
 import 'package:dummy_products/src/features/product/presentation/view_product/description_section.dart';
 import 'package:dummy_products/src/features/product/presentation/view_product/images_section.dart';
